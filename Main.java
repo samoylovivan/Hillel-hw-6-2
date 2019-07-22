@@ -13,28 +13,28 @@ public class Main {
     }
 
     public  static int stringDifference(String a, String b){
-        Set<String> SetA = new HashSet<String>();
-        Set<String> SetB = new HashSet<String>();
+        Set<String> setA = new HashSet<String>();
+        Set<String> setB = new HashSet<String>();
 
         if(a.length() != b.length()){
           return -1;
         }
         for (int i: a.toCharArray()) {
-            SetA.add(String.valueOf(i));
+            setA.add(String.valueOf(i));
         }
         for (int i: b.toCharArray()) {
-            SetB.add(String.valueOf(i));
+            setB.add(String.valueOf(i));
         }
-        if(SetA.equals(SetB)){
+        if(setA.equals(setB)){
             return 0;
         }
-        if(SetA.size() >= SetB.size()){
-            SetA.removeAll(SetB);
-            return SetA.size();
+        if(setA.size() >= setB.size()){
+            setA.removeAll(setB);
+            return setA.size();
         }
         else {
-            SetB.removeAll(SetA);
-            return SetB.size();
+            setB.removeAll(setA);
+            return setB.size();
         }
     }
 }
